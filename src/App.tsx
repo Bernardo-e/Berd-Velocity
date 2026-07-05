@@ -210,13 +210,13 @@ const MainAppContent: React.FC = () => {
             <button onClick={() => setPrivacyOpen(true)} className="hover:text-primary transition-colors cursor-pointer">Privacy Policy</button>
             <button onClick={() => setTermsOpen(true)}   className="hover:text-primary transition-colors cursor-pointer">Terms of Service</button>
             <a
-              href="https://www.linkedin.com/in/bernardo"
+              href="https://www.linkedin.com/in/bernardo-e-092aaa387/"
               target="_blank" rel="noreferrer"
               className="hover:text-primary transition-colors flex items-center gap-1"
             >
               <Linkedin className="w-3.5 h-3.5" /> LinkedIn
             </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">GitHub</a>
+            <a href="https://github.com/Bernardo-e" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">GitHub</a>
           </div>
         </div>
       </footer>

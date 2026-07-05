@@ -35,15 +35,8 @@ function getTestGrade(wpm: number, accuracy: number, theme: string): { letter: s
       shadow: isLight ? 'rgba(15, 23, 42, 0.15)' : 'rgba(255, 255, 255, 0.2)'
     };
   }
-  if (wpm >= 40 && accuracy >= 80) {
-    return {
-      letter: 'C',
-      color: 'text-outline',
-      shadow: isLight ? 'rgba(100, 116, 139, 0.1)' : 'rgba(144, 250, 160, 0.15)'
-    };
-  }
   return {
-    letter: 'D',
+    letter: 'Improve',
     color: 'text-error',
     shadow: isLight ? 'rgba(239, 68, 68, 0.25)' : 'rgba(255, 180, 171, 0.3)'
   };
@@ -203,13 +196,13 @@ export const ResultsSummary: React.FC = () => {
           />
           <span className="text-[10px] text-outline font-semibold uppercase tracking-wider block mb-2 z-10">PERFORMANCE GRADE</span>
           <span 
-            className={`text-8xl font-black font-display-xl z-10 ${grade.color}`}
+            className={`font-black font-display-xl z-10 ${grade.color} ${grade.letter.length > 2 ? 'text-4xl md:text-5.5xl' : 'text-8xl'}`}
             style={{ textShadow: `0 0 40px ${grade.shadow}` }}
           >
             {grade.letter}
           </span>
-          <span className="text-xs text-on-surface-variant mt-2 font-medium z-10">
-            {wpm >= 100 ? 'Elite typing level' : wpm >= 60 ? 'Pro competency level' : 'Intermediate level'}
+          <span className="text-xs text-on-surface-variant mt-3 font-medium z-10">
+            {wpm >= 100 ? 'Elite typing level' : wpm >= 60 ? 'Pro competency level' : 'Practice to build muscle memory'}
           </span>
         </div>
       </div>

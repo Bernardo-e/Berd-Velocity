@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, .theme-dark {
+    --background: #0b1326;
+    --surface: #0b1326;
+    --surface-bright: #31394d;
+    --surface-lowest: #060e20;
+    --surface-low: #131b2e;
+    --surface-container: #171f33;
+    --surface-high: #222a3d;
+    --surface-highest: #2d3449;
+    --on-surface: #dae2fd;
+    --on-surface-variant: #c7c4d7;
+    --inverse-on-surface: #283044;
+    --outline: #908fa0;
+    --outline-variant: #464554;
+    --primary: #c0c1ff;
+    --on-primary: #1000a9;
+    --primary-container: #8083ff;
+    --on-primary-container: #0d0096;
+    --inverse-primary: #494bd6;
+    --secondary: #44e2cd;
+    --on-secondary: #003731;
+    --secondary-container: #03c6b2;
+    --on-secondary-container: #004d44;
+    --tertiary: #c4c7c9;
+    --on-tertiary: #2d3133;
+    --tertiary-container: #8e9193;
+    --on-tertiary-container: #272a2c;
+    --error: #ffb4ab;
+    --on-error: #690005;
+    --error-container: #93000a;
+    --on-error-container: #ffdad6;
+    
+    --primary-glow: rgba(192, 193, 255, 0.2);
+    --secondary-glow: rgba(68, 226, 205, 0.15);
+  }
+
+  .theme-light {
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --surface-bright: #e2e8f0;
+    --surface-lowest: #f1f5f9;
+    --surface-low: #f8fafc;
+    --surface-container: #ffffff;
+    --surface-high: #f1f5f9;
+    --surface-highest: #e2e8f0;
+    --on-surface: #0f172a;
+    --on-surface-variant: #475569;
+    --inverse-on-surface: #f8fafc;
+    --outline: #64748b;
+    --outline-variant: #cbd5e1;
+    --primary: #4f46e5;
+    --on-primary: #ffffff;
+    --primary-container: #c7d2fe;
+    --on-primary-container: #1e1b4b;
+    --inverse-primary: #818cf8;
+    --secondary: #0d9488;
+    --on-secondary: #ffffff;
+    --secondary-container: #ccfbf1;
+    --on-secondary-container: #115e59;
+    --tertiary: #475569;
+    --on-tertiary: #ffffff;
+    --tertiary-container: #f1f5f9;
+    --on-tertiary-container: #1e293b;
+    --error: #ef4444;
+    --on-error: #ffffff;
+    --error-container: #fee2e2;
+    --on-error-container: #991b1b;
+
+    --primary-glow: rgba(79, 70, 229, 0.15);
+    --secondary-glow: rgba(13, 148, 136, 0.1);
+  }
+
+  .theme-cyber {
+    --background: #0d0518;
+    --surface: #120720;
+    --surface-bright: #3b1764;
+    --surface-lowest: #08030f;
+    --surface-low: #1c0b30;
+    --surface-container: #230f3c;
+    --surface-high: #2f1450;
+    --surface-highest: #3f1b6c;
+    --on-surface: #00ffff;
+    --on-surface-variant: #f0f6fc;
+    --inverse-on-surface: #0f051d;
+    --outline: #ab47bc;
+    --outline-variant: #6a1b9a;
+    --primary: #ff007f;
+    --on-primary: #ffffff;
+    --primary-container: #4a0e4e;
+    --on-primary-container: #ff80df;
+    --inverse-primary: #d500f9;
+    --secondary: #00f0ff;
+    --on-secondary: #000000;
+    --secondary-container: #003333;
+    --on-secondary-container: #33ffff;
+    --tertiary: #d2d2d2;
+    --on-tertiary: #000000;
+    --tertiary-container: #1f1f1f;
+    --on-tertiary-container: #e0e0e0;
+    --error: #ff3333;
+    --on-error: #ffffff;
+    --error-container: #4a0000;
+    --on-error-container: #ff9999;
+
+    --primary-glow: rgba(255, 0, 127, 0.25);
+    --secondary-glow: rgba(0, 240, 255, 0.2);
+  }
+
+  .theme-ocean {
+    --background: #020c1b;
+    --surface: #03152c;
+    --surface-bright: #073562;
+    --surface-lowest: #01060e;
+    --surface-low: #041d3c;
+    --surface-container: #06264d;
+    --surface-high: #093466;
+    --surface-highest: #0c4380;
+    --on-surface: #e0f2fe;
+    --on-surface-variant: #93c5fd;
+    --inverse-on-surface: #031b33;
+    --outline: #38bdf8;
+    --outline-variant: #0284c7;
+    --primary: #38bdf8;
+    --on-primary: #075985;
+    --primary-container: #0c4a6e;
+    --on-primary-container: #bae6fd;
+    --inverse-primary: #7dd3fc;
+    --secondary: #34d399;
+    --on-secondary: #064e3b;
+    --secondary-container: #064e3b;
+    --on-secondary-container: #a7f3d0;
+    --tertiary: #94a3b8;
+    --on-tertiary: #0f172a;
+    --tertiary-container: #1e293b;
+    --on-tertiary-container: #cbd5e1;
+    --error: #f87171;
+    --on-error: #7f1d1d;
+    --error-container: #7f1d1d;
+    --on-error-container: #fca5a5;
+
+    --primary-glow: rgba(56, 189, 248, 0.2);
+    --secondary-glow: rgba(52, 211, 153, 0.15);
+  }
+
+  .theme-forest {
+    --background: #060c07;
+    --surface: #0a140d;
+    --surface-bright: #1c3523;
+    --surface-lowest: #030603;
+    --surface-low: #0d1e13;
+    --surface-container: #142a1b;
+    --surface-high: #1c3b26;
+    --surface-highest: #254d32;
+    --on-surface: #ecfdf5;
+    --on-surface-variant: #a7f3d0;
+    --inverse-on-surface: #061f10;
+    --outline: #22c55e;
+    --outline-variant: #15803d;
+    --primary: #a3e635;
+    --on-primary: #3f6212;
+    --primary-container: #3f6212;
+    --on-primary-container: #d9f99d;
+    --inverse-primary: #bef264;
+    --secondary: #2dd4bf;
+    --on-secondary: #0f766e;
+    --secondary-container: #0f766e;
+    --on-secondary-container: #99f6e4;
+    --tertiary: #94a3b8;
+    --on-tertiary: #0f172a;
+    --tertiary-container: #1e293b;
+    --on-tertiary-container: #cbd5e1;
+    --error: #f87171;
+    --on-error: #7f1d1d;
+    --error-container: #7f1d1d;
+    --on-error-container: #fca5a5;
+
+    --primary-glow: rgba(163, 230, 53, 0.2);
+    --secondary-glow: rgba(45, 212, 191, 0.15);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--on-surface);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
+
+  /* ── Global input/textarea text visibility fix ── */
+  /* Tailwind's preflight resets color to inherit, but our bg colors can make  */
+  /* text invisible. Explicitly set text + caret to --on-surface for all inputs. */
+  input,
+  textarea,
+  select {
+    color: var(--on-surface) !important;
+    caret-color: var(--primary) !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--outline) !important;
+    opacity: 0.7;
+  }
+
+  /* Focus rings */
+  input:focus-visible,
+  textarea:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Glassmorphic Cards styling */
+.glass-card {
+  background: rgba(23, 31, 51, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-light .glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.theme-cyber .glass-card {
+  background: rgba(35, 15, 60, 0.4);
+  border: 1px solid rgba(255, 0, 127, 0.15);
+}
+
+.theme-ocean .glass-card {
+  background: rgba(6, 38, 77, 0.45);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.theme-forest .glass-card {
+  background: rgba(20, 42, 27, 0.45);
+  border: 1px solid rgba(163, 230, 53, 0.15);
+}
+
+/* Hover effect on Glass Cards */
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px -10px var(--primary-glow);
+}
+
+/* Linear Border Effect matching Stitch CIP design */
+.linear-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.theme-light .linear-border::before {
+  background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.15), transparent);
+}
+
+.theme-cyber .linear-border::before {
+  background: linear-gradient(to bottom right, rgba(255, 0, 127, 0.3), transparent);
+}
+
+.theme-ocean .linear-border::before {
+  background: linear-gradient(to bottom right, rgba(56, 189, 248, 0.3), transparent);
+}
+
+.theme-forest .linear-border::before {
+  background: linear-gradient(to bottom right, rgba(163, 230, 53, 0.3), transparent);
+}
+
+/* ── Typing character classes (used by TextDisplay in PracticeMode) ── */
+.char-correct {
+  color: var(--secondary);
+  transition: color 0.06s;
+}
+
+.char-wrong {
+  color: var(--error);
+  background-color: rgba(255, 100, 90, 0.12);
+  border-radius: 2px;
+}
+
+.char-neutral {
+  color: var(--outline);
+  opacity: 0.55;
+}
+
+.char-active {
+  color: var(--outline);
+  opacity: 0.55;
+  position: relative;
+}
+
+/* Smooth blinking caret rendered inside .char-active */
+.typing-caret {
+  position: absolute;
+  left: -1px;
+  top: 0.05em;
+  width: 2px;
+  height: 1.15em;
+  background-color: var(--primary);
+  border-radius: 2px;
+  animation: caret-blink 1s step-start infinite;
+  box-shadow: 0 0 8px var(--primary-glow);
+  pointer-events: none;
+}
+
+@keyframes caret-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Text display area — word wrapping, no overflow */
+.typing-text-area {
+  max-width: 100%;
+  word-break: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+/* Legacy classes (kept for compatibility) */
+.character-correct  { color: var(--secondary); }
+.character-incorrect { color: var(--error); background-color: rgba(255, 100, 90, 0.12); }
+.character-neutral  { color: var(--outline); opacity: 0.55; }
+.character-current  { position: relative; }
+
+/* Caret pulsing transition */
+.caret-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Material icon weight adjustment */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.material-symbols-outlined-fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-container-highest);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
+
+/* Countdown overlays and custom animations */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Selection custom color */
+::selection {
+  background-color: var(--primary-glow);
+  color: var(--primary);
+}

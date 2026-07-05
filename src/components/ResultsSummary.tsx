@@ -5,13 +5,48 @@ import confetti from 'canvas-confetti';
 import { motion } from 'framer-motion';
 
 // Grade calculator helper
-function getTestGrade(wpm: number, accuracy: number): { letter: string; color: string; shadow: string } {
-  if (wpm >= 120 && accuracy === 100) return { letter: 'S+', color: 'text-secondary', shadow: 'rgba(68, 226, 205, 0.6)' };
-  if (wpm >= 100 && accuracy >= 98) return { letter: 'S', color: 'text-primary', shadow: 'rgba(192, 193, 255, 0.6)' };
-  if (wpm >= 80 && accuracy >= 95) return { letter: 'A', color: 'text-primary', shadow: 'rgba(192, 193, 255, 0.4)' };
-  if (wpm >= 60 && accuracy >= 90) return { letter: 'B', color: 'text-on-surface', shadow: 'rgba(255, 255, 255, 0.2)' };
-  if (wpm >= 40 && accuracy >= 80) return { letter: 'C', color: 'text-outline', shadow: 'rgba(144, 250, 160, 0.1)' };
-  return { letter: 'D', color: 'text-error', shadow: 'rgba(255, 180, 171, 0.3)' };
+function getTestGrade(wpm: number, accuracy: number, theme: string): { letter: string; color: string; shadow: string } {
+  const isLight = theme === 'light';
+  if (wpm >= 120 && accuracy === 100) {
+    return {
+      letter: 'S+',
+      color: 'text-secondary',
+      shadow: isLight ? 'rgba(13, 148, 136, 0.25)' : 'rgba(68, 226, 205, 0.6)'
+    };
+  }
+  if (wpm >= 100 && accuracy >= 98) {
+    return {
+      letter: 'S',
+      color: 'text-primary',
+      shadow: isLight ? 'rgba(79, 70, 229, 0.25)' : 'rgba(192, 193, 255, 0.6)'
+    };
+  }
+  if (wpm >= 80 && accuracy >= 95) {
+    return {
+      letter: 'A',
+      color: 'text-primary',
+      shadow: isLight ? 'rgba(79, 70, 229, 0.2)' : 'rgba(192, 193, 255, 0.4)'
+    };
+  }
+  if (wpm >= 60 && accuracy >= 90) {
+    return {
+      letter: 'B',
+      color: 'text-on-surface',
+      shadow: isLight ? 'rgba(15, 23, 42, 0.15)' : 'rgba(255, 255, 255, 0.2)'
+    };
+  }
+  if (wpm >= 40 && accuracy >= 80) {
+    return {
+      letter: 'C',
+      color: 'text-outline',
+      shadow: isLight ? 'rgba(100, 116, 139, 0.1)' : 'rgba(144, 250, 160, 0.15)'
+    };
+  }
+  return {
+    letter: 'D',
+    color: 'text-error',
+    shadow: isLight ? 'rgba(239, 68, 68, 0.25)' : 'rgba(255, 180, 171, 0.3)'
+  };
 }
 
 export const ResultsSummary: React.FC = () => {
@@ -61,7 +96,7 @@ export const ResultsSummary: React.FC = () => {
   }
 
   const { wpm, rawWpm, accuracy, mistakes, elapsedTime, completedChars, wpmHistory } = activeTestStats;
-  const grade = getTestGrade(wpm, accuracy);
+  const grade = getTestGrade(wpm, accuracy, settings.theme);
 
   // Copy shareable results format
   const handleShare = () => {

@@ -52,7 +52,6 @@ const MainAppContent: React.FC = () => {
   const [nameOpen, setNameOpen]       = useState(false);
   const [nameInput, setNameInput]     = useState('');
   const [themeOpen, setThemeOpen]     = useState(false);
-  const [settingsOpen, setSettingsOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [termsOpen, setTermsOpen]     = useState(false);
 
@@ -142,7 +141,7 @@ const MainAppContent: React.FC = () => {
 
             {/* Settings */}
             <button
-              onClick={() => setSettingsOpen(v => !v)}
+              onClick={() => setActiveTab('dashboard')}
               title="Settings"
               className="p-2 rounded-lg text-on-surface-variant hover:text-primary transition-colors bg-white/5 border border-white/8 hover:border-white/15 cursor-pointer"
             >
@@ -231,10 +230,11 @@ const MainAppContent: React.FC = () => {
           value={nameInput}
           onChange={e => setNameInput(e.target.value)}
           onKeyDown={e => e.key === 'Enter' && saveName()}
-          placeholder="e.g. berd, Alex, TypeMaster…"
+          placeholder="e.g. MasterTypist…"
           maxLength={24}
           autoFocus
-          className="w-full bg-background/60 border border-white/10 rounded-xl px-4 py-3 text-base text-on-surface focus:outline-none focus:border-primary transition-all mb-5"
+          className="w-full border border-primary/45 rounded-xl px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all mb-5 font-semibold"
+          style={{ color: '#000000', backgroundColor: '#ffffff' }}
         />
         <div className="flex justify-end gap-3">
           <button onClick={() => setNameOpen(false)} className="px-5 py-2.5 rounded-xl text-sm border border-white/10 hover:bg-white/5 transition-colors">Cancel</button>
@@ -242,30 +242,7 @@ const MainAppContent: React.FC = () => {
         </div>
       </Modal>
 
-      {/* ── Settings modal ────────────────────────────────── */}
-      <AnimatePresence>
-        {settingsOpen && (
-          <div className="fixed inset-0 z-[500] bg-background/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.93, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.93, y: 10 }}
-              transition={{ duration: 0.2 }}
-              className="w-full max-w-2xl glass-card linear-border rounded-2xl p-7 shadow-2xl my-8"
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-bold text-on-surface flex items-center gap-2">
-                  <SettingsIcon className="w-5 h-5 text-primary" /> Settings
-                </h3>
-                <button onClick={() => setSettingsOpen(false)} className="text-outline hover:text-on-surface transition-colors p-1 rounded-lg hover:bg-white/5">
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-              <SettingsPanel />
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+
 
       {/* ── Privacy Policy modal ──────────────────────────── */}
       <Modal open={privacyOpen} onClose={() => setPrivacyOpen(false)} title="Privacy Policy">

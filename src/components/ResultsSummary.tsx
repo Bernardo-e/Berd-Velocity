@@ -88,7 +88,7 @@ export const ResultsSummary: React.FC = () => {
   }
 
   const { wpm, rawWpm, accuracy, mistakes, elapsedTime, completedChars, wpmHistory } = activeTestStats;
-  const grade = getTestGrade(wpm, accuracy, settings.theme);
+  const grade = getTestGrade(wpm, accuracy);
 
   // Copy shareable results format
   const handleShare = () => {
@@ -135,7 +135,7 @@ export const ResultsSummary: React.FC = () => {
 
   return (
     <div className="w-full max-w-[900px] mx-auto py-8 px-6 md:px-12 animate-in fade-in zoom-in-95 duration-500">
-      
+
       {/* Top Banner Celebration */}
       <div className="text-center mb-12">
         <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-secondary/10 text-secondary text-xs uppercase tracking-widest mb-4">
@@ -147,7 +147,7 @@ export const ResultsSummary: React.FC = () => {
 
       {/* Main Scorecard Section */}
       <div className="grid md:grid-cols-3 gap-6 mb-8">
-        
+
         {/* Core Stats Block */}
         <div className="glass-card linear-border rounded-2xl p-6 flex flex-col justify-between md:col-span-2">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -189,12 +189,12 @@ export const ResultsSummary: React.FC = () => {
         {/* Dynamic Grade Card */}
         <div className="glass-card linear-border rounded-2xl p-6 text-center flex flex-col items-center justify-center relative overflow-hidden group">
           {/* Light glow aura */}
-          <div 
-            className="absolute inset-0 opacity-10 blur-[40px] pointer-events-none group-hover:scale-110 transition-transform duration-700" 
-            style={{ backgroundColor: grade.shadow }} 
+          <div
+            className="absolute inset-0 opacity-10 blur-[40px] pointer-events-none group-hover:scale-110 transition-transform duration-700"
+            style={{ backgroundColor: grade.shadow }}
           />
           <span className="text-[10px] text-outline font-semibold uppercase tracking-wider block mb-2 z-10">PERFORMANCE GRADE</span>
-          <span 
+          <span
             className={`font-black font-display-xl z-10 ${grade.color} ${grade.letter.length > 2 ? 'text-4xl md:text-5.5xl' : 'text-8xl'}`}
             style={{ textShadow: `0 0 40px ${grade.shadow}` }}
           >
@@ -212,11 +212,11 @@ export const ResultsSummary: React.FC = () => {
           <Zap className="w-4 h-4 text-primary" />
           Speed Trajectory (WPM over time)
         </h3>
-        
+
         {wpmHistory.length > 1 ? (
           <div className="w-full relative">
-            <svg 
-              viewBox={`0 0 ${width} ${height}`} 
+            <svg
+              viewBox={`0 0 ${width} ${height}`}
               className="w-full h-[180px] overflow-visible"
             >
               {/* Gradients */}
@@ -233,16 +233,16 @@ export const ResultsSummary: React.FC = () => {
               <line x1={padding} y1={height - padding} x2={width - padding} y2={height - padding} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
 
               {/* Area path */}
-              <path 
-                d={areaPath} 
+              <path
+                d={areaPath}
                 fill="url(#chartGlow)"
               />
 
               {/* Line path */}
-              <motion.path 
-                d={linePath} 
-                fill="none" 
-                stroke="var(--primary)" 
+              <motion.path
+                d={linePath}
+                fill="none"
+                stroke="var(--primary)"
                 strokeWidth={2.5}
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}

@@ -233,8 +233,8 @@ const MainAppContent: React.FC = () => {
           placeholder="e.g. MasterTypist…"
           maxLength={24}
           autoFocus
-          className="w-full border border-primary/45 rounded-xl px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all mb-5 font-semibold"
-          style={{ color: '#000000', backgroundColor: '#ffffff' }}
+          className="w-full border border-primary/45 rounded-xl px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all mb-5 font-semibold text-black-force placeholder-zinc-400"
+          style={{ backgroundColor: '#ffffff' }}
         />
         <div className="flex justify-end gap-3">
           <button onClick={() => setNameOpen(false)} className="px-5 py-2.5 rounded-xl text-sm border border-white/10 hover:bg-white/5 transition-colors">Cancel</button>
@@ -281,9 +281,7 @@ const MainAppContent: React.FC = () => {
           </ul>
           <h4 className="text-on-surface font-semibold">Disclaimer</h4>
           <p>Velocity Typing is provided "as-is" without warranty of any kind. The authors are not liable for any data loss or damages arising from use of the application.</p>
-          <h4 className="text-on-surface font-semibold">Governing law</h4>
-          <p>These terms are governed by the laws of India. Any disputes shall be resolved in the courts of Chennai, Tamil Nadu.</p>
-        </div>
+         </div>
       </Modal>
     </div>
   );

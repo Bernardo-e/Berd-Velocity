@@ -213,6 +213,11 @@
     outline: 2px solid var(--primary);
     outline-offset: 2px;
   }
+
+  /* Force black text utility (e.g. for display name white box input) */
+  .text-black-force {
+    color: #000000 !important;
+  }
 }
 
 /* Glassmorphic Cards styling */
